@@ -3,12 +3,12 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var watson = require('watson-developer-cloud');
 var app = express();
-var contexid = "";
+var contexid = "kariteun_context";
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-var conversation_id = "";
+var conversation_id = "context_variables";
 var w_conversation = watson.conversation({
     url: 'https://gateway.watsonplatform.net/conversation/api',
     username: process.env.CONVERSATION_USERNAME || '910ddb34-afa4-4f28-97e2-3cb489a6538a',
@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res) {
 		
 		var params = {
 			input: text,
-			//context: {"conversation_id": conversation_id},
+			context: {"conversation_id": conversation_id},
 			context:contexid
 		}
 
