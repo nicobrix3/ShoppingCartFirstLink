@@ -11,12 +11,12 @@ app.use(bodyParser.json())
 var conversation_id = "";
 var w_conversation = watson.conversation({
     url: 'https://gateway.watsonplatform.net/conversation/api',
-    username: process.env.CONVERSATION_USERNAME || 'paste conversation api username here',
-    password: process.env.CONVERSATION_PASSWORD || 'paste conversation api password here',
+    username: process.env.CONVERSATION_USERNAME || '910ddb34-afa4-4f28-97e2-3cb489a6538a',
+    password: process.env.CONVERSATION_PASSWORD || '7UMjz88wDpU7',
     version: 'v1',
     version_date: '2016-07-11'
 });
-var workspace = process.env.WORKSPACE_ID || 'workspaceId';
+var workspace = process.env.WORKSPACE_ID || 'cbb31541-9fd7-49f4-b9fc-f0348f5c7687';
 
 app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === 'EAAdhhcXnmCYBAIf9ZBpDKXbNx4cK5P3XZAkpX20VmGysorU2XtJkVtaJh5xxJMJ78NI8F7ZAb7TDLcDRMEKFzhpyUo8nqYC2Y56pIRFXQDpBi0HhBxWH0Icc9GcfKJP3cL9L0nskr85DzXiac35ZAPeZAqwoTVkivxjdNerg6FQZDZD') {
